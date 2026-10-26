@@ -1,0 +1,206 @@
+/* Généré par marque/jetons/construire.py depuis jetons.json. Ne pas modifier à la main. */
+:root {
+  color-scheme: light;
+  --palette-prusse: #0F3157;
+  --palette-prusse-profond: #0A2442;
+  --palette-renvoi: #7FA6D6;
+  --palette-brume: #A8BDD6;
+  --palette-mine: #F2B300;
+  --palette-surligneur: #FFE7A0;
+  --palette-blanc: #FFFFFF;
+  --palette-calque: #EEF1F4;
+  --palette-filet: #D3D7DC;
+  --palette-graphite: #23262B;
+  --palette-graphite-2: #5E636B;
+
+  --papier: #FFFFFF;
+  --calque: #EEF1F4;
+  --surface: #FFFFFF;
+  --encre: #23262B;
+  --encre-2: #5E636B;
+  --tirage: #0F3157;
+  --tirage-survol: #0A2442;
+  --sur-tirage: #FFFFFF;
+  --lien: #1D4F91;
+  --lavis: #E1EBF6;
+  --trait: #D3D7DC;
+  --trait-fort: #7D838C;
+  --renvoi: #5A84BC;
+  --mine: #F2B300;
+  --surligneur: #FFE7A0;
+  --sur-surligneur: #23262B;
+  --critique: #B42318;
+  --critique-fond: #FCEAE8;
+  --attention: #A04A00;
+  --attention-fond: #FDEFE3;
+  --valide: #1F6B48;
+  --valide-fond: #E4F2EA;
+  --ombre-fragment: 0 1px 2px rgba(35, 38, 43, 0.08), 0 24px 64px rgba(35, 38, 43, 0.14);
+  --ombre-levee: 0 2px 4px rgba(35, 38, 43, 0.10), 0 32px 80px rgba(35, 38, 43, 0.22);
+
+  --police-titre: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --police-texte: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --graisse-texte: 400;
+  --graisse-appui: 500;
+  --graisse-titre: 700;
+  --graisse-marque: 800;
+  --taille-xs: 12px;
+  --taille-s: 14px;
+  --taille-m: 16px;
+  --taille-l: 21px;
+  --taille-xl: 24px;
+  --taille-2xl: 36px;
+  --taille-3xl: 48px;
+  --taille-4xl: 72px;
+  --taille-5xl: 128px;
+  --interligne-affiche: 1.0;
+  --interligne-titre: 1.1;
+  --interligne-compact: 1.35;
+  --interligne-texte: 1.5;
+  --approche-affiche: -0.04em;
+  --approche-titre: -0.025em;
+  --approche-marque: -0.035em;
+  --mesure: 68ch;
+  --espace-1: 4px;
+  --espace-2: 8px;
+  --espace-3: 12px;
+  --espace-4: 16px;
+  --espace-5: 24px;
+  --espace-6: 32px;
+  --espace-7: 48px;
+  --espace-8: 64px;
+  --espace-9: 96px;
+  --page-largeur: 1120px;
+  --page-gouttiere: 24px;
+  --page-marge: 16px;
+  --page-colonnes: 12;
+  --epaisseur-fin: 1px;
+  --epaisseur-moyen: 2px;
+  --epaisseur-fort: 3px;
+  --rayon-aucun: 0px;
+  --rayon-controle: 6px;
+  --rayon-fragment: 14px;
+  --rayon-pilule: 999px;
+  --motif-renvoi-coude: 12px;
+  --motif-renvoi-pastille: 8px;
+  --motif-renvoi-section: 64px;
+  --motif-lignes-pas: 2;
+  --motif-lignes-alinea: 1.5;
+  --duree-instant: 100ms;
+  --duree-court: 160ms;
+  --duree-moyen: 240ms;
+  --duree-long: 400ms;
+  --duree-trace: 800ms;
+  --duree-decalage: 80ms;
+  --courbe-pose: cubic-bezier(0.2, 0, 0, 1);
+  --courbe-levee: cubic-bezier(0.4, 0, 1, 1);
+  --courbe-trace: cubic-bezier(0, 0, 1, 1);
+}
+
+/* Version marque : thème sombre du système, sauf choix explicite de la version claire. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]):not([data-theme="clair"]) {
+    color-scheme: dark;
+    --papier: #0F3157;
+    --calque: #0A2442;
+    --surface: #15406E;
+    --encre: #FFFFFF;
+    --encre-2: #A8BDD6;
+    --tirage: #FFFFFF;
+    --tirage-survol: #D7E5F3;
+    --sur-tirage: #0F3157;
+    --lien: #9FC0E8;
+    --lavis: #1B4A7C;
+    --trait: #2A5280;
+    --trait-fort: #6E8DB5;
+    --renvoi: #7FA6D6;
+    --mine: #F2B300;
+    --surligneur: #FFE7A0;
+    --sur-surligneur: #23262B;
+    --critique: #FFA39A;
+    --critique-fond: #4A2236;
+    --attention: #FFB680;
+    --attention-fond: #45302E;
+    --valide: #86D9AB;
+    --valide-fond: #124541;
+    --ombre-fragment: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 4px rgba(5, 18, 36, 0.25), 0 24px 60px rgba(5, 18, 36, 0.45);
+    --ombre-levee: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 8px rgba(5, 18, 36, 0.3), 0 40px 90px rgba(5, 18, 36, 0.55);
+  }
+}
+
+/* Version forcée sur la page ou sur un bloc (bannière, fiche blanche posée sur le bleu). */
+:root[data-theme="dark"], [data-theme="marque"] {
+  color-scheme: dark;
+  --papier: #0F3157;
+  --calque: #0A2442;
+  --surface: #15406E;
+  --encre: #FFFFFF;
+  --encre-2: #A8BDD6;
+  --tirage: #FFFFFF;
+  --tirage-survol: #D7E5F3;
+  --sur-tirage: #0F3157;
+  --lien: #9FC0E8;
+  --lavis: #1B4A7C;
+  --trait: #2A5280;
+  --trait-fort: #6E8DB5;
+  --renvoi: #7FA6D6;
+  --mine: #F2B300;
+  --surligneur: #FFE7A0;
+  --sur-surligneur: #23262B;
+  --critique: #FFA39A;
+  --critique-fond: #4A2236;
+  --attention: #FFB680;
+  --attention-fond: #45302E;
+  --valide: #86D9AB;
+  --valide-fond: #124541;
+  --ombre-fragment: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 4px rgba(5, 18, 36, 0.25), 0 24px 60px rgba(5, 18, 36, 0.45);
+  --ombre-levee: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 4px 8px rgba(5, 18, 36, 0.3), 0 40px 90px rgba(5, 18, 36, 0.55);
+}
+
+[data-theme="clair"] {
+  color-scheme: light;
+  --papier: #FFFFFF;
+  --calque: #EEF1F4;
+  --surface: #FFFFFF;
+  --encre: #23262B;
+  --encre-2: #5E636B;
+  --tirage: #0F3157;
+  --tirage-survol: #0A2442;
+  --sur-tirage: #FFFFFF;
+  --lien: #1D4F91;
+  --lavis: #E1EBF6;
+  --trait: #D3D7DC;
+  --trait-fort: #7D838C;
+  --renvoi: #5A84BC;
+  --mine: #F2B300;
+  --surligneur: #FFE7A0;
+  --sur-surligneur: #23262B;
+  --critique: #B42318;
+  --critique-fond: #FCEAE8;
+  --attention: #A04A00;
+  --attention-fond: #FDEFE3;
+  --valide: #1F6B48;
+  --valide-fond: #E4F2EA;
+  --ombre-fragment: 0 1px 2px rgba(35, 38, 43, 0.08), 0 24px 64px rgba(35, 38, 43, 0.14);
+  --ombre-levee: 0 2px 4px rgba(35, 38, 43, 0.10), 0 32px 80px rgba(35, 38, 43, 0.22);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duree-instant: 0ms;
+    --duree-court: 0ms;
+    --duree-moyen: 0ms;
+    --duree-long: 0ms;
+    --duree-trace: 0ms;
+    --duree-decalage: 0ms;
+  }
+}
+
+/* Alias v1, temporaires. Alias CSS temporaires pour les fichiers encore en v1 (scènes vidéo, relecture vidéo, logo/planche.html, modeles/linkedin, modeles/video). `sur-signal` et `approche-societe`, sans usage, sont retirés. apercu.html est migré (T-038) : ses deux alias propres (interligne-mono, rayon-leger) sont retirés. À supprimer quand T-039 et T-040 auront migré le reste. Aucun nouveau support ne doit les utiliser. */
+:root {
+  --signal: var(--mine);
+  --beton: var(--trait-fort);
+  --largeur-titre: 100%;
+  --approche-cartouche: 0.08em;
+  --interligne-serre: var(--interligne-titre);
+}

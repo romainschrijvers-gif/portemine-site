@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>.trait{fill:#0F3157}.mine{fill:#F2B300}@media (prefers-color-scheme:dark){.trait{fill:#FFFFFF}}</style>
+  <path class="trait" d="M20 12 L56 12 L56 20 L20 20 Z"/>
+  <path class="trait" d="M8 28 L56 28 L56 36 L8 36 Z"/>
+  <path class="trait" d="M8 44 L32 44 L32 52 L8 52 Z"/>
+  <path class="mine" d="M36 44 L56 48 L36 52 Z"/>
+</svg>
