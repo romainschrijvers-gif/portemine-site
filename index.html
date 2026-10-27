@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Portemine · Aide à la réponse aux appels d’offres</title>
-<meta name="description" content="Portemine lit votre DCE et rédige le premier jet de votre mémoire technique avec vos propres chantiers. Ce qu’il ne trouve pas, il vous le signale au lieu de l’inventer.">
+<meta name="description" content="Portemine lit votre DCE et rédige le premier jet de votre mémoire technique à partir de la bibliothèque de votre entreprise. Ce qu’il ne trouve pas, il vous le signale au lieu de l’inventer.">
 <meta name="theme-color" content="#0F3157">
 <link rel="canonical" href="https://portemine.fr/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://portemine.fr/">
 <meta property="og:title" content="Portemine · Le premier jet, sans rien oublier, sans rien inventer.">
-<meta property="og:description" content="Aide à la réponse aux appels d’offres. Portemine lit votre DCE et rédige le premier jet de votre mémoire technique avec vos propres chantiers.">
+<meta property="og:description" content="Aide à la réponse aux appels d’offres. Portemine lit votre DCE et rédige le premier jet de votre mémoire technique à partir de la bibliothèque de votre entreprise.">
 <meta property="og:image" content="https://portemine.fr/media/partage.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,15 @@
 <link rel="preload" href="polices/schibsted-grotesk-variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="jetons.css">
 <link rel="stylesheet" href="site.css">
-<script>try { if (localStorage.getItem("mouvement") === "pause") document.documentElement.dataset.mouvement = "pause"; } catch (e) {}</script>
+<script>
+  // Les animations ne s'arment que si le script tourne et que le visiteur n'a pas demandé moins de mouvement :
+  // sans elles, la page s'affiche directement dans son état final.
+  (function () {
+    var r = document.documentElement;
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) r.classList.add("anime");
+    try { if (localStorage.getItem("mouvement") === "pause") r.dataset.mouvement = "pause"; } catch (e) {}
+  })();
+</script>
 <script src="site.js" defer></script>
 </head>
 <body>
@@ -30,277 +38,352 @@
 <a class="evitement" href="#contenu">Aller au contenu</a>
 
 <header class="barre">
-  <div class="barre-dedans">
+  <div class="page barre-dedans">
     <a href="#haut" class="marque-lien" aria-label="Portemine, haut de page"><img src="logo/logo-horizontal-clair.svg" alt="Portemine" width="132" height="24"></a>
     <nav aria-label="Sections">
       <ul>
         <li><a href="#produit">Le produit</a></li>
-        <li><a href="#votre-equipe">Votre équipe</a></li>
-        <li><a href="#limites">Ses limites</a></li>
-        <li><a href="#documents">Vos documents</a></li>
-        <li><a href="#equipe">Qui sommes-nous</a></li>
+        <li><a href="#sans-inventer">Sans rien inventer</a></li>
+        <li><a href="#vos-donnees">Vos données</a></li>
+        <li><a href="#equipe">L’équipe</a></li>
       </ul>
     </nav>
-    <a class="bouton principal petit" href="mailto:romain@portemine.fr?subject=Appel%20de%2030%20minutes%20sur%20Portemine">Réserver un appel</a>
+    <a class="bouton principal petit" href="https://calendar.app.google/WHWJzX2LEHFPZG3t5" target="_blank" rel="noopener">Réserver un appel</a>
   </div>
 </header>
 
 <main id="contenu">
 
-  <!-- Ouverture. Mouvement joué une fois au chargement (D-0034). Texte repris d'un mémoire produit par l'outil (DCE public, entreprise fictive). -->
+  <!-- Ouverture : ce que vous apportez, ce que vous recevez. Le circuit se trace une fois au chargement. -->
   <section class="ouverture" id="haut" aria-labelledby="t-ouverture">
-    <div class="ouverture-texte">
-      <p class="surtitre">Aide à la réponse aux appels d’offres</p>
-      <h1 id="t-ouverture">Le premier jet, sans rien oublier, sans rien inventer.</h1>
-      <p class="chapeau">Portemine lit votre DCE et rédige le premier jet de votre mémoire technique avec vos propres chantiers&nbsp;; ce qu’il ne trouve pas, il vous le signale au lieu de l’inventer.</p>
-      <div class="actions">
-        <a class="bouton principal" href="mailto:romain@portemine.fr?subject=Appel%20de%2030%20minutes%20sur%20Portemine">Réserver un appel de 30&nbsp;minutes</a>
-        <button type="button" class="bouton second" data-ouvre="teaser">
-          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>
-          Voir le teaser <span class="duree">36&nbsp;s</span>
-        </button>
+    <div class="page ouverture-grille">
+      <div class="ouverture-texte">
+        <p class="descriptif">Aide à la réponse aux appels d’offres</p>
+        <h1 id="t-ouverture">Le premier jet, sans rien oublier, sans rien inventer.</h1>
+        <p class="chapeau">Portemine lit votre DCE et rédige le premier jet de votre mémoire technique à partir de la bibliothèque de votre entreprise&nbsp;: vos références, vos moyens, vos équipes, vos méthodes.</p>
+        <div class="actions">
+          <a class="bouton principal" href="https://calendar.app.google/WHWJzX2LEHFPZG3t5" target="_blank" rel="noopener">Réserver un appel</a>
+          <button type="button" class="bouton second" data-ouvre="teaser">
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>
+            Voir le teaser <span class="duree">36&nbsp;s</span>
+          </button>
+        </div>
+        <p class="note">Un appel de 30 minutes. Vous relisez, vous corrigez, vous signez.</p>
       </div>
-      <p class="note">Vous relisez, vous corrigez, vous signez.</p>
-    </div>
 
-    <figure class="pose" id="pose" aria-label="Exemple&nbsp;: l’acte d’engagement fixe un délai de 15 mois, le CCAP de 2 mois. Le mémoire le signale et marque le délai À CONFIRMER, avec sa source.">
-      <div class="feuille cctp" aria-hidden="true">
-        <div class="feuille-tete"><span>Ce que le marché fixe</span><span>Lot 01</span></div>
-        <p class="feuille-titre">Délai d’exécution</p>
-        <ul class="delais">
-          <li><span class="exigence">15 mois</span><span class="puce">AE, page 7</span></li>
-          <li><span class="exigence">2 mois</span><span class="puce source" id="pose-source">CCAP, page 25</span></li>
-        </ul>
-      </div>
-      <div class="feuille memoire" aria-hidden="true">
-        <div class="feuille-tete"><span>Mémoire technique</span><span>Phasage et planning</span></div>
-        <p><span class="phrase" id="pose-phrase">Les pièces du DCE ne donnent pas le même délai.</span></p>
-        <p>Délai retenu&nbsp;: <span class="a-confirmer">[À CONFIRMER&nbsp;: délai]</span>. À arbitrer avant remise&nbsp;; l’outil le signale, il ne tranche pas.</p>
-        <div class="lignes"><i style="width: 88%"></i><i style="width: 52%"></i></div>
-      </div>
-      <svg class="renvoi" id="pose-renvoi" aria-hidden="true"><circle class="depart" r="4"/><path class="trait" pathLength="1"/></svg>
-    </figure>
+      <figure class="circuit" data-schema aria-label="Le DCE et la bibliothèque de votre entreprise entrent dans Portemine&nbsp;; il en sort le mémoire technique au format Word et un ZIP des annexes.">
+        <div class="circuit-entrees">
+          <div class="carte" id="c-dce">
+            <p class="carte-titre">Le DCE</p>
+            <ul class="pieces"><li>RC</li><li>CCTP</li><li>CCAP</li><li>AE</li><li>DPGF</li></ul>
+          </div>
+          <div class="carte" id="c-bib">
+            <p class="carte-titre">Votre bibliothèque</p>
+            <ul class="fichiers">
+              <li>presentation-entreprise</li>
+              <li>fiche-reference-ecole</li>
+              <li>parc-materiel</li>
+              <li>encadrement-types</li>
+            </ul>
+            <p class="carte-note">et 7 autres documents</p>
+          </div>
+        </div>
+        <div class="circuit-coeur" id="c-coeur">
+          <img src="logo/symbole-fonce.svg" alt="" width="40" height="40">
+          <span>Portemine</span>
+        </div>
+        <div class="circuit-sorties">
+          <div class="carte sortie" id="c-docx">
+            <p class="carte-titre">Mémoire technique<span class="ext">.docx</span></p>
+            <div class="lignes" aria-hidden="true"><i style="width: 92%"></i><i style="width: 78%"></i><i class="manque" style="width: 56%"></i><i style="width: 84%"></i></div>
+          </div>
+          <div class="carte sortie" id="c-zip">
+            <p class="carte-titre">Annexes<span class="ext">.zip</span></p>
+            <ul class="annexes-mini"><li><b>A</b>CV, Camille Exemple</li><li><b>B</b>Organigramme</li><li><b>C</b>Qualifications</li></ul>
+          </div>
+        </div>
+        <svg class="liens" aria-hidden="true">
+          <path class="flux" pathLength="1" data-de="c-dce" data-vers="c-coeur"/>
+          <path class="flux" pathLength="1" data-de="c-bib" data-vers="c-coeur"/>
+          <path class="flux" pathLength="1" data-de="c-coeur" data-vers="c-docx"/>
+          <path class="flux" pathLength="1" data-de="c-coeur" data-vers="c-zip"/>
+        </svg>
+      </figure>
+    </div>
   </section>
 
-  <!-- Le produit -->
-  <section class="bloc" id="produit" aria-labelledby="t-produit">
-    <div class="tete">
-      <img class="ouvre" src="media/section-clair.svg" alt="" width="64" height="8">
-      <h2 id="t-produit">Ce qu’il fait, dans l’ordre.</h2>
-      <p class="chapeau">Portemine prépare le travail de votre chargé d’études. Il lit, il relève, il rédige un premier jet. Votre équipe garde la main sur ce qui part chez l’acheteur.</p>
+  <!-- Ce que vous recevez : quatre temps, dans l'ordre du travail -->
+  <section class="section" id="produit" aria-labelledby="t-produit">
+    <div class="page">
+      <div class="tete">
+        <h2 id="t-produit">Un mémoire écrit avec ce que votre entreprise sait déjà.</h2>
+        <p class="chapeau">Portemine part de vos documents, pas d’un texte générique. Chaque phrase s’appuie sur une pièce du DCE ou sur un document de votre bibliothèque.</p>
+      </div>
+
+      <ol class="temps">
+        <li class="temps-rang">
+          <div class="temps-texte">
+            <span class="numero">01</span>
+            <h3>Il lit tout le DCE.</h3>
+            <p>Exigences, critères de jugement, pièces à joindre&nbsp;: tout est relevé, classé et relié à sa pièce et à sa page. Les clauses qui éliminent une offre passent en premier.</p>
+          </div>
+          <figure class="scene sur-calque" data-revele>
+            <div class="empile">
+              <div class="feuille" aria-label="Exigences relevées dans le CCTP du lot 01, chacune avec sa source.">
+                <div class="feuille-tete"><span>Exigences relevées</span><span>CCTP, lot 01</span></div>
+                <table class="exigences">
+                  <tbody>
+                    <tr><td><span class="type juridique">Juridique</span></td><td>Se conformer au CCAP.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
+                    <tr><td><span class="type securite">Sécurité</span></td><td>Poser tous les panneaux de signalisation nécessaires ainsi que les éclairages de nuit.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
+                    <tr><td><span class="type admin">Administrative</span></td><td>Supporter les conséquences des règlements administratifs liés à l’installation de chantier.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="feuille levee critique-bord" aria-label="Clauses éliminatoires&nbsp;: visite obligatoire.">
+                <p class="resultat-titre critique"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>Clauses éliminatoires</p>
+                <ul class="resultat-liste">
+                  <li>Visite du site obligatoire avant remise de l’offre.</li>
+                  <li>Fournir le certificat de visite du site dûment signé.</li>
+                </ul>
+              </div>
+            </div>
+          </figure>
+        </li>
+
+        <li class="temps-rang">
+          <div class="temps-texte">
+            <span class="numero">02</span>
+            <h3>Il rédige avec votre bibliothèque.</h3>
+            <p>Vos références, votre parc matériel, vos modes opératoires&nbsp;: le mémoire reprend vos faits pour ce chantier-là, et renvoie au document d’où chacun vient.</p>
+          </div>
+          <figure class="scene eclaire" data-theme="marque" data-revele data-schema>
+            <div class="duo">
+              <div class="feuille haut">
+                <div class="feuille-tete"><span>Votre bibliothèque</span><span>parc-materiel</span></div>
+                <ul class="extrait-liste">
+                  <li><span class="exigence">1 grue mobile de 35 tonnes en location longue durée.</span></li>
+                  <li>250 m² de banches métalliques, 600 m² de coffrages modulaires.</li>
+                </ul>
+                <span class="puce source" id="t2-source">parc-materiel</span>
+              </div>
+              <div class="feuille bas">
+                <div class="feuille-tete"><span>Mémoire technique</span><span>Engins et matériel</span></div>
+                <p><span class="phrase" id="t2-phrase">Une grue mobile de 35 tonnes est prévue pour les levées ponctuelles de préfabriqués.</span></p>
+                <div class="lignes" aria-hidden="true"><i style="width: 90%"></i><i style="width: 64%"></i></div>
+              </div>
+            </div>
+            <svg class="liens" aria-hidden="true"><path class="renvoi" pathLength="1" data-de="t2-phrase" data-vers="t2-source" data-forme="renvoi"/></svg>
+          </figure>
+        </li>
+
+        <li class="temps-rang">
+          <div class="temps-texte">
+            <span class="numero">03</span>
+            <h3>Il met votre équipe à son poste.</h3>
+            <p>Vous affectez vos personnes aux postes du dossier. Le mémoire les nomme avec leur expérience, propose l’organigramme et joint leurs CV.</p>
+          </div>
+          <figure class="scene sur-calque" data-revele>
+            <div class="equipe-visuel">
+              <div class="feuille affectations">
+                <div class="feuille-tete"><span>Affectations du dossier</span><span class="enregistre">Enregistrées</span></div>
+                <ul>
+                  <li><span class="poste">Conducteur de travaux</span><span class="nom-personne">Camille Exemple <em>(fictif)</em></span></li>
+                  <li><span class="poste">Chef de chantier</span><span class="nom-personne">Julien Modèle <em>(fictif)</em></span></li>
+                  <li><span class="poste">Responsable QSE</span><span class="nom-personne">Sophie Témoin <em>(fictive)</em></span></li>
+                </ul>
+              </div>
+              <div class="feuille organigramme levee" aria-label="Organigramme proposé&nbsp;: le conducteur de travaux encadre le chef de chantier et la responsable QSE.">
+                <div class="feuille-tete"><span>Organigramme de l’encadrement</span><span class="puce">Proposé</span></div>
+                <div class="arbre" aria-hidden="true">
+                  <div class="noeud haut"><b>Camille Exemple</b><span>Conducteur de travaux</span></div>
+                  <div class="branches"></div>
+                  <div class="noeuds-bas">
+                    <div class="noeud"><b>Julien Modèle</b><span>Chef de chantier</span></div>
+                    <div class="noeud"><b>Sophie Témoin</b><span>Responsable QSE</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="feuille extrait">
+                <p>Le conducteur de travaux <b>Camille Exemple</b>, 14 ans d’expérience dont 9 en gros œuvre de bâtiments publics, assure le pilotage global et l’interface avec la maîtrise d’œuvre.</p>
+                <span class="puce">CV joint en annexe A</span>
+              </div>
+            </div>
+          </figure>
+        </li>
+
+        <li class="temps-rang">
+          <div class="temps-texte">
+            <span class="numero">04</span>
+            <h3>Il prépare toutes les annexes.</h3>
+            <p>Le mémoire au format Word et un ZIP de toutes les annexes, lettrées et légendées comme dans le texte. Prêtes à relire, puis à déposer.</p>
+          </div>
+          <figure class="scene eclaire" data-theme="marque" data-revele>
+            <div class="feuille archive">
+              <div class="feuille-tete"><span>Annexes.zip</span><span>6 fichiers</span></div>
+              <ol class="annexes">
+                <li><b>A</b><span>CV, Camille Exemple</span><em>pdf</em></li>
+                <li><b>B</b><span>CV, Julien Modèle</span><em>pdf</em></li>
+                <li><b>C</b><span>Organigramme de l’encadrement</span><em>docx</em></li>
+                <li><b>D</b><span>Qualifications et certifications</span><em>pdf</em></li>
+                <li><b>E</b><span>Référence, école</span><em>pdf</em></li>
+                <li><b>F</b><span>Référence, médiathèque</span><em>pdf</em></li>
+              </ol>
+              <p class="archive-pied"><span class="fichier-docx">Mémoire technique.docx</span> renvoie à chaque annexe par sa lettre.</p>
+            </div>
+          </figure>
+        </li>
+      </ol>
+      <p class="legende">Résultats de l’outil sur un dossier de consultation public et une entreprise fictive, mis en page pour ce site.</p>
     </div>
+  </section>
 
-    <ol class="temps">
-      <li class="temps-rang">
-        <div class="temps-texte">
-          <span class="numero">01</span>
-          <h3>Il lit tout le DCE.</h3>
-          <p>RC, CCTP, CCAP, DPGF&nbsp;: chaque exigence est relevée, classée, et reliée à sa pièce et à sa page.</p>
-        </div>
-        <figure class="scene sur-calque">
-          <div class="fragment feuille resultat">
-            <div class="feuille-tete"><span>Exigences relevées</span><span>CCTP · Lot 01</span></div>
-            <table class="exigences">
-              <thead><tr><th scope="col">Type</th><th scope="col">Exigence</th><th scope="col">Source</th></tr></thead>
-              <tbody>
-                <tr><td><span class="type juridique">Juridique</span></td><td>Être responsable des dégâts, dégradations ou désordres causés par les vibrations sur le chantier ou à des tiers.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
-                <tr><td><span class="type admin">Administrative</span></td><td>Supporter les conséquences des règlements administratifs liés à l’installation de chantier, l’aire de stockage, le gardiennage et la sécurité de la circulation.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
-                <tr><td><span class="type juridique">Juridique</span></td><td>Se conformer au CCAP.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
-                <tr><td><span class="type securite">Sécurité</span></td><td>Poser tous les panneaux de signalisation nécessaires ainsi que les éclairages de nuit.</td><td><span class="puce">CCTP, p.&nbsp;2</span></td></tr>
-              </tbody>
-            </table>
+  <!-- Sans rien inventer : les cas où l'outil s'arrête et vous le dit -->
+  <section class="section sur-calque" id="sans-inventer" aria-labelledby="t-sans-inventer">
+    <div class="page">
+      <div class="tete">
+        <h2 id="t-sans-inventer">Ce qu’il ne sait pas, il vous le dit.</h2>
+        <p class="chapeau">Une date, un nom, un chiffre absents de vos documents ne sont jamais devinés. Ils restent marqués <span class="a-confirmer">[À CONFIRMER]</span> jusqu’à votre relecture.</p>
+      </div>
+
+      <div class="cas">
+        <figure class="cas-principal" data-revele data-schema aria-label="L’acte d’engagement fixe un délai de 15 mois, le CCAP de 2 mois. Le mémoire le signale et marque le délai À CONFIRMER.">
+          <div class="duo">
+            <div class="feuille haut" aria-hidden="true">
+              <div class="feuille-tete"><span>Ce que le marché fixe</span><span>Lot 01</span></div>
+              <p class="feuille-titre">Délai d’exécution</p>
+              <ul class="delais">
+                <li><span class="exigence">15 mois</span><span class="puce">AE, page 7</span></li>
+                <li><span class="exigence">2 mois</span><span class="puce source" id="d-source">CCAP, page 25</span></li>
+              </ul>
+            </div>
+            <div class="feuille bas" aria-hidden="true">
+              <div class="feuille-tete"><span>Mémoire technique</span><span>Phasage et planning</span></div>
+              <p><span class="phrase" id="d-phrase">Les pièces du DCE ne donnent pas le même délai.</span></p>
+              <p>Délai retenu&nbsp;: <span class="a-confirmer">[À CONFIRMER&nbsp;: délai]</span>. À arbitrer avant remise.</p>
+            </div>
           </div>
-          <figcaption class="etiquette-sous">Chaque ligne renvoie à sa source.</figcaption>
+          <svg class="liens" aria-hidden="true"><path class="renvoi" pathLength="1" data-de="d-phrase" data-vers="d-source" data-forme="renvoi"/></svg>
+          <figcaption>Deux pièces se contredisent&nbsp;: il le signale, il ne tranche pas.</figcaption>
         </figure>
-      </li>
 
-      <li class="temps-rang">
-        <div class="temps-texte">
-          <span class="numero">02</span>
-          <h3>Il met en premier ce qui élimine.</h3>
-          <p>Visite obligatoire, certificats, pièces à joindre&nbsp;: les clauses qui rendent une offre irrecevable sont listées à part, avant tout le reste.</p>
-        </div>
-        <figure class="scene eclaire" data-theme="marque">
-          <div class="fragment feuille resultat">
-            <div class="feuille-tete"><span>Analyse du DCE</span><span>Lot 01</span></div>
-            <p class="resultat-titre critique"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4M12 17h.01"/></svg>Clauses éliminatoires&nbsp;: recevabilité de l’offre</p>
-            <p class="resultat-groupe">Visite obligatoire</p>
-            <ul class="resultat-liste">
-              <li>Visite de site obligatoire pour le lot 1 «&nbsp;Gros-œuvre&nbsp;»</li>
-              <li>Visite du site obligatoire avant remise de l’offre.</li>
-              <li>Une visite des lieux est obligatoire durant la consultation et la remise des offres.</li>
-              <li>Fournir le certificat de visite du site dûment signé pour les lots concernés.</li>
-            </ul>
-          </div>
-          <figcaption class="etiquette-sous">Ce qui élimine une offre, en premier.</figcaption>
-        </figure>
-      </li>
-
-      <li class="temps-rang">
-        <div class="temps-texte">
-          <span class="numero">03</span>
-          <h3>Il n’invente ni date, ni durée.</h3>
-          <p>Le planning reprend les phases et les contraintes du DCE. Les dates relèvent de votre préparation de chantier&nbsp;: elles restent marquées <span class="a-confirmer">[À CONFIRMER]</span> tant que vous ne les avez pas posées.</p>
-        </div>
-        <figure class="scene sur-calque">
-          <div class="fragment feuille resultat">
+        <div class="cas-cote">
+        <figure class="cas-second" data-revele>
+          <div class="feuille">
             <div class="feuille-tete"><span>Mémoire technique</span><span>Planning prévisionnel</span></div>
             <div class="defile">
               <table class="planning">
-                <thead><tr><th scope="col">Phase</th><th scope="col">Début</th><th scope="col">Durée</th><th scope="col">Fin</th></tr></thead>
+                <thead><tr><th scope="col">Phase</th><th scope="col">Début</th><th scope="col">Durée</th></tr></thead>
                 <tbody>
-                  <tr><th scope="row">Période de préparation</th><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
-                  <tr><th scope="row">Installation de chantier</th><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
-                  <tr><th scope="row">Repli et nettoyage</th><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
+                  <tr><th scope="row">Préparation</th><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
+                  <tr><th scope="row">Installation de chantier</th><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
+                  <tr><th scope="row">Repli et nettoyage</th><td><span class="a-confirmer">[À CONFIRMER]</span></td><td><span class="a-confirmer">[À CONFIRMER]</span></td></tr>
                 </tbody>
               </table>
             </div>
+          </div>
+          <figcaption>Aucune date, aucune durée n’est produite par l’outil.</figcaption>
+        </figure>
+
+        <figure class="cas-second" data-revele>
+          <div class="feuille">
+            <div class="feuille-tete"><span>Mémoire technique</span><span>Plan d’installation de chantier</span></div>
             <p class="resultat-groupe">Ce qui reste à votre charge</p>
             <ul class="charge">
-              <li>l’arbitrage du délai d’exécution entre les pièces du DCE</li>
-              <li>la date de démarrage effective des travaux</li>
-              <li>le planning détaillé à joindre en annexe</li>
-            </ul>
-          </div>
-          <figcaption class="etiquette-sous">Aucune date, aucune durée n’est produite par l’outil.</figcaption>
-        </figure>
-      </li>
-
-      <li class="temps-rang">
-        <div class="temps-texte">
-          <span class="numero">04</span>
-          <h3>Il prépare les documents que vous seul pouvez produire.</h3>
-          <p>Plan d’installation de chantier, planning&nbsp;: il réunit tout ce que le DCE en exige, pièce et page, et liste ce qui reste à dessiner ou à décider.</p>
-        </div>
-        <figure class="scene eclaire" data-theme="marque">
-          <div class="fragment feuille resultat">
-            <div class="feuille-tete"><span>Mémoire technique</span><span>Plan d’installation de chantier</span></div>
-            <ul class="citations">
-              <li><span class="puce">CCTP, p.&nbsp;26</span><span>«&nbsp;Les clôtures provisoires grillagées doivent être constituées de panneaux métalliques grillagés […]&nbsp;»</span></li>
-              <li><span class="puce">CCTC, p.&nbsp;6</span><span>«&nbsp;Prévoir les installations de chantier décrites dans le descriptif, le PGC SPS et le Plan d’installations de chantier.&nbsp;»</span></li>
-              <li><span class="puce">CCTC, p.&nbsp;36</span><span>«&nbsp;Assurer la conservation des repères planimétriques et altimétriques.&nbsp;»</span></li>
-            </ul>
-            <p class="resultat-groupe">Ce qui reste à votre charge</p>
-            <ul class="charge cases">
               <li>l’implantation de la base vie et des cantonnements</li>
               <li>la position des moyens de levage et leur zone de survol</li>
               <li>les accès, circulations et aires de retournement</li>
-              <li>les aires de stockage et d’approvisionnement</li>
             </ul>
           </div>
-          <figcaption class="etiquette-sous">La trame part des exigences du DCE&nbsp;; le dessin reste le vôtre.</figcaption>
+          <figcaption>La trame part des exigences du DCE&nbsp;; le dessin reste le vôtre.</figcaption>
         </figure>
-      </li>
-    </ol>
-    <p class="legende">Résultats produits par l’outil sur un dossier de consultation public et une entreprise fictive, mis en page pour ce site.</p>
-  </section>
+        </div>
 
-  <!-- Votre équipe : référentiel des personnes, affectations par dossier, CV et organigramme proposés -->
-  <section class="vos-equipes" id="votre-equipe" aria-labelledby="t-vos-equipes">
-    <div class="vos-equipes-dedans">
-      <div class="tete">
-        <img class="ouvre" src="media/section-clair.svg" alt="" width="64" height="8">
-        <h2 id="t-vos-equipes">Votre équipe, nommée dans le mémoire.</h2>
-        <p class="chapeau">Vous saisissez vos équipes une fois. Pour chaque dossier, vous affectez les postes&nbsp;; Portemine fait le reste.</p>
-      </div>
-      <div class="equipe-grille">
-        <ol class="equipe-etapes">
-          <li><h3>Les postes sont tenus par vos personnes.</h3><p>Conducteur de travaux, chef de chantier, responsable QSE&nbsp;: un choix dans votre liste, pas un nom à retaper.</p></li>
-          <li><h3>Le mémoire les nomme.</h3><p>Chacun apparaît à son poste, dans les sections qui le demandent.</p></li>
-          <li><h3>Les CV suivent.</h3><p>Le CV de chaque personne affectée est proposé en annexe, à la section où il compte.</p></li>
-          <li><h3>L’organigramme est proposé.</h3><p>Organigramme de chantier ou de l’encadrement&nbsp;: vous le validez d’un clic, il part dans l’export.</p></li>
-        </ol>
-        <figure class="equipe-visuel">
-          <div class="feuille affectations" aria-label="Affectations du dossier&nbsp;: chef de chantier Julien Modèle, conducteur de travaux Camille Exemple, responsable QSE Sophie Témoin, personnes fictives.">
-            <div class="feuille-tete"><span>Affectations du dossier</span><span>Enregistrées</span></div>
-            <ul>
-              <li><span class="poste">Conducteur de travaux</span><span class="nom-personne">Camille Exemple <em>(fictif)</em></span></li>
-              <li><span class="poste">Chef de chantier</span><span class="nom-personne">Julien Modèle <em>(fictif)</em></span></li>
-              <li><span class="poste">Responsable QSE</span><span class="nom-personne">Sophie Témoin <em>(fictive)</em></span></li>
-            </ul>
-          </div>
-          <div class="feuille organigramme" aria-label="Organigramme de l’encadrement&nbsp;: le conducteur de travaux encadre le chef de chantier et la responsable QSE.">
-            <div class="feuille-tete"><span>Organigramme de l’encadrement</span><span class="puce">Proposé</span></div>
-            <div class="arbre" aria-hidden="true">
-              <div class="noeud haut"><b>Camille Exemple</b><span>Conducteur de travaux</span></div>
-              <div class="branches"></div>
-              <div class="noeuds-bas">
-                <div class="noeud"><b>Julien Modèle</b><span>Chef de chantier</span></div>
-                <div class="noeud"><b>Sophie Témoin</b><span>Responsable QSE</span></div>
-              </div>
-            </div>
-          </div>
-          <div class="feuille extrait" aria-hidden="true">
-            <p>Le conducteur de travaux <b>Camille Exemple</b> assure le pilotage global et l’interface avec la maîtrise d’œuvre et d’ouvrage. Le chef de chantier <b>Julien Modèle</b> supervise l’exécution quotidienne des travaux.</p>
-            <span class="puce">CV de Camille Exemple, proposé en annexe</span>
-          </div>
-        </figure>
+        <ul class="limites">
+          <li>Il ne lit pas encore les plans ni les fichiers DWG.</li>
+          <li>Il ne signe pas&nbsp;: le mémoire reste le vôtre.</li>
+          <li>Il ne remplace pas la visite de site.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- Limites -->
-  <section class="bloc" id="limites" aria-labelledby="t-limites">
-    <div class="tete">
-      <img class="ouvre" src="media/section-clair.svg" alt="" width="64" height="8">
-      <h2 id="t-limites">Ce qu’il ne fait pas.</h2>
-      <p class="chapeau">Nous le disons avant que vous le demandiez.</p>
-    </div>
-    <ul class="limites">
-      <li><h3>Il ne lit pas encore les plans.</h3><p>Ni les fichiers DWG. Il travaille sur les pièces écrites du DCE.</p></li>
-      <li><h3>Il ne signe pas.</h3><p>Le mémoire reste le vôtre. Vous relisez, vous corrigez, vous signez.</p></li>
-      <li><h3>Il n’invente rien.</h3><p>Ni référence, ni date, ni chiffre. Ce qui manque est marqué, pas deviné.</p></li>
-      <li><h3>Il ne remplace pas le terrain.</h3><p>La visite de site et votre connaissance de l’acheteur restent les vôtres.</p></li>
-    </ul>
-  </section>
+  <!-- Vos données : la bande la plus marquante de la page -->
+  <section class="souverainete" id="vos-donnees" data-theme="marque" aria-labelledby="t-souverainete">
+    <div class="page">
+      <h2 id="t-souverainete"><span>Vos documents restent en France.</span> <span>Le texte est rédigé par une IA française.</span></h2>
 
-  <!-- Vos documents -->
-  <section class="documents" id="documents" data-theme="marque" aria-labelledby="t-documents">
-    <div class="documents-dedans">
-      <div class="tete">
-        <img class="ouvre" src="media/section-marque.svg" alt="" width="64" height="8">
-        <h2 id="t-documents">Une instance à vous, en France.</h2>
-        <p class="chapeau">Vos mémoires, vos références et vos CV sont le savoir de l’entreprise. Ils ne quittent pas un cadre que vous connaissez.</p>
-      </div>
+      <figure class="trajet" data-revele data-schema aria-label="Vos documents vont sur votre instance, hébergée par OVHcloud en France&nbsp;; la rédaction est faite par Mistral, à Paris.">
+        <div class="etape">
+          <svg class="pictogramme" id="s-docs" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+          <p class="etape-nom">Vos documents</p>
+          <p class="etape-detail">Mémoires, références, CV, méthodes</p>
+        </div>
+        <div class="etape">
+          <svg class="pictogramme" id="s-instance" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M7 7.5h.01M7 16.5h.01"/></svg>
+          <p class="etape-nom">Votre instance</p>
+          <p class="etape-detail">OVHcloud, en France, ou sur vos serveurs</p>
+        </div>
+        <div class="etape">
+          <svg class="pictogramme" id="s-redaction" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
+          <p class="etape-nom">La rédaction</p>
+          <p class="etape-detail">Mistral, société française, Paris</p>
+        </div>
+        <svg class="liens" aria-hidden="true">
+          <path class="flux" pathLength="1" data-de="s-docs" data-vers="s-instance" data-parcourt/>
+          <path class="flux" pathLength="1" data-de="s-instance" data-vers="s-redaction" data-parcourt/>
+        </svg>
+      </figure>
+
       <dl class="garanties">
         <div><dt>Une instance par client</dt><dd>Vos documents ne sont mélangés à ceux de personne.</dd></div>
-        <div><dt>Hébergée en France</dt><dd>Chez OVHcloud, ou sur vos propres serveurs si vous le demandez.</dd></div>
-        <div><dt>Une IA française</dt><dd>Le texte est rédigé avec Mistral, une société française.</dd></div>
+        <div><dt>En France, ou chez vous</dt><dd>Hébergée chez OVHcloud, ou installée sur vos propres serveurs si vous le demandez.</dd></div>
+        <div><dt>Rien ne sort sans vous</dt><dd>Le mémoire reste un premier jet&nbsp;: votre équipe relit, corrige et signe.</dd></div>
       </dl>
     </div>
   </section>
 
-  <!-- Qui sommes-nous -->
-  <section class="bloc" id="equipe" aria-labelledby="t-equipe">
-    <div class="tete">
-      <img class="ouvre" src="media/section-clair.svg" alt="" width="64" height="8">
-      <h2 id="t-equipe">Qui vous parle.</h2>
-      <p class="chapeau">Je suis votre interlocuteur du cadrage à la livraison. La sécurité de votre instance et la qualité de l’IA sont suivies par Justin Cuzin.</p>
-    </div>
-    <div class="personnes">
-      <article class="personne">
-        <div class="portrait"><img src="media/romain.webp" alt="Portrait de Romain Schrijvers" width="640" height="640" loading="lazy"></div>
-        <div class="personne-texte">
-          <h3>Romain Schrijvers</h3>
-          <p class="role">Votre interlocuteur, du cadrage à la livraison</p>
-          <p>Je suis élève ingénieur à l’INSA Lyon. Depuis 2024, je travaille avec la Junior-Entreprise de l’école. J’ai conçu et livré, avec le dirigeant d’une PME du BTP, un outil qui lit un dossier de consultation et rédige un premier jet de mémoire technique. J’ai aussi fait un stage dans un groupe du CAC&nbsp;40.</p>
-        </div>
-      </article>
-      <article class="personne">
-        <div class="portrait"><img src="media/justin.webp" alt="Portrait de Justin Cuzin" width="640" height="640" loading="lazy"></div>
-        <div class="personne-texte">
-          <h3>Justin Cuzin</h3>
-          <p class="role">Cofondateur, technique et stratégie</p>
-          <p>Ingénieur INSA Lyon, Justin met des systèmes d’IA en production. Il a déjà déployé un assistant documentaire dans un cadre ISO&nbsp;27001. Il conçoit et sécurise les instances.</p>
-        </div>
-      </article>
+  <!-- L'équipe -->
+  <section class="section" id="equipe" aria-labelledby="t-equipe">
+    <div class="page">
+      <div class="tete">
+        <h2 id="t-equipe">Qui vous parle.</h2>
+        <p class="chapeau">Je suis votre interlocuteur du cadrage à la livraison. La sécurité de votre instance et la qualité de l’IA sont suivies par Justin Cuzin.</p>
+      </div>
+
+      <div class="personnes">
+        <article class="personne">
+          <div class="portrait"><img src="media/romain.webp" alt="Portrait de Romain Schrijvers" width="640" height="640" loading="lazy"></div>
+          <div class="personne-tete">
+            <h3>Romain Schrijvers</h3>
+            <p class="role">Votre interlocuteur, du cadrage à la livraison</p>
+          </div>
+          <ol class="jalons" data-revele>
+            <li style="--i: 0"><span class="quand">2024</span><p>Rejoint la Junior-Entreprise de l’INSA Lyon, dont un an à la fonction commerciale.</p></li>
+            <li style="--i: 1"><span class="quand">2026</span><p>Conçoit et livre, avec le dirigeant d’une PME du BTP, un outil qui lit un dossier de consultation et rédige un premier jet de mémoire technique.</p></li>
+            <li style="--i: 2"><span class="quand">2026</span><p>Stage dans un groupe du CAC&nbsp;40.</p></li>
+            <li style="--i: 3"><span class="quand">Aujourd’hui</span><p>Élève ingénieur à l’INSA Lyon, à l’origine de Portemine.</p></li>
+          </ol>
+        </article>
+        <article class="personne">
+          <div class="portrait"><img src="media/justin.webp" alt="Portrait de Justin Cuzin" width="640" height="640" loading="lazy"></div>
+          <div class="personne-tete">
+            <h3>Justin Cuzin</h3>
+            <p class="role">Cofondateur, technique et stratégie</p>
+          </div>
+          <ol class="jalons" data-revele>
+            <li style="--i: 0"><span class="quand">2022–2025</span><p>Ingénieur INSA Lyon, informatique, double diplôme à l’Universität Passau.</p></li>
+            <li style="--i: 1"><span class="quand">2022–2026</span><p>Missions pour la Junior-Entreprise de l’INSA, dont un assistant documentaire déployé dans un cadre ISO&nbsp;27001.</p></li>
+            <li style="--i: 2"><span class="quand">Aujourd’hui</span><p>Met des systèmes d’IA en production. Chez Portemine, il conçoit et sécurise les instances.</p></li>
+          </ol>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- Bandeau des sociétés de Romain, repris du site perso (TrustMarquee) : exception à D-0019 limitée à ce site (D-0034). Jamais présentées comme clientes de Portemine. -->
+  <!-- Bandeau repris du site perso (TrustMarquee) : exception à D-0019 limitée à ce site (D-0034). -->
   <section class="parcours" aria-labelledby="t-parcours">
-    <div class="parcours-tete">
-      <h2 class="parcours-titre" id="t-parcours">Romain a travaillé avec</h2>
+    <div class="page">
+      <h2 class="parcours-titre" id="t-parcours">Nous avons déjà travaillé avec</h2>
     </div>
     <div class="parcours-rail">
       <div class="parcours-piste">
@@ -324,19 +407,15 @@
         </ul>
       </div>
     </div>
-    <div class="parcours-pied">
-      <p class="legende">En mission, en stage ou avec la Junior-Entreprise de l’INSA Lyon. Ces sociétés ne sont pas citées comme clientes de Portemine.</p>
+    <div class="page parcours-pied">
       <button type="button" class="bascule-mouvement" data-bascule-mouvement aria-pressed="false">Mettre en pause les animations</button>
     </div>
   </section>
 
-  <!-- Appel -->
-  <section class="appel" id="appel" aria-labelledby="t-appel">
-    <div class="appel-dedans">
-      <div class="tete">
-        <img class="ouvre" src="media/section-clair.svg" alt="" width="64" height="8">
-        <h2 id="t-appel">Trente minutes pour voir si c’est pour vous.</h2>
-      </div>
+  <!-- L'appel -->
+  <section class="section appel" id="appel" aria-labelledby="t-appel">
+    <div class="page">
+      <h2 id="t-appel">Trente minutes pour voir si c’est pour vous.</h2>
       <ol class="deroule">
         <li><span class="numero">1</span><h3>Je vous présente l’outil.</h3><p>Sur un dossier de consultation public de votre métier, du DCE au premier jet.</p></li>
         <li><span class="numero">2</span><h3>Vous me présentez votre façon de répondre.</h3><p>Qui rédige, avec quels documents, sur quels marchés, en combien de temps.</p></li>
@@ -344,7 +423,7 @@
         <li><span class="numero">4</span><h3>Nous lançons l’étude.</h3><p>Si la proposition vous convient, nous préparons la mise en service sur vos documents.</p></li>
       </ol>
       <div class="actions">
-        <a class="bouton principal grand" href="mailto:romain@portemine.fr?subject=Appel%20de%2030%20minutes%20sur%20Portemine">Réserver un appel</a>
+        <a class="bouton principal grand" href="https://calendar.app.google/WHWJzX2LEHFPZG3t5" target="_blank" rel="noopener">Réserver un appel</a>
         <p class="ou">ou écrivez à <a href="mailto:romain@portemine.fr">romain@portemine.fr</a></p>
       </div>
     </div>
@@ -353,9 +432,8 @@
 </main>
 
 <footer class="pied">
-  <div class="pied-dedans">
+  <div class="page pied-dedans">
     <img src="logo/logo-horizontal-clair.svg" alt="Portemine" width="110" height="20">
-    <p>Portemine est édité par Schrijvers, société en cours de création.</p>
     <ul>
       <li><a href="mailto:romain@portemine.fr">romain@portemine.fr</a></li>
       <li><a href="mentions-legales.html">Mentions légales</a></li>
