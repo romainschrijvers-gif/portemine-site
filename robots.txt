@@ -1,2 +1,8 @@
+# portemine.fr : page publique. Tous les robots sont admis, y compris ceux
+# des moteurs de réponse (OAI-SearchBot, Claude-SearchBot, PerplexityBot).
+# Les mentions légales sont en noindex : ne pas les interdire ici, sinon le
+# noindex ne serait plus lu.
 User-agent: *
 Allow: /
+
+Sitemap: https://portemine.fr/sitemap.xml

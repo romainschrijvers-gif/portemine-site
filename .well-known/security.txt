@@ -1,0 +1,4 @@
+Contact: mailto:romain@portemine.fr
+Expires: 2027-10-26T22:00:00.000Z
+Preferred-Languages: fr, en
+Canonical: https://portemine.fr/.well-known/security.txt

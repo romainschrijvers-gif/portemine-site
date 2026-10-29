@@ -2,28 +2,29 @@
 <html lang="fr" data-theme="clair">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mentions légales · Portemine</title>
 <meta name="robots" content="noindex">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="stylesheet" href="jetons.css">
-<link rel="stylesheet" href="site.css">
+<meta name="theme-color" content="#0F3157">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/polices/schibsted-grotesk-variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/site.7e7a7c1d.css">
 </head>
 <body>
-<!-- À valider par l'avocat (T-063). Mis en ligne avant relecture, sur décision de Romain (2026-10-26). -->
-
-<header class="barre">
-  <div class="barre-dedans">
-    <a href="index.html" class="marque-lien" aria-label="Portemine, accueil"><img src="logo/logo-horizontal-clair.svg" alt="Portemine" width="132" height="24"></a>
-    <nav aria-label="Retour"><ul><li><a href="index.html">Retour au site</a></li></ul></nav>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header class="barre" data-theme="marque">
+  <div class="page barre-dedans">
+    <a href="/" class="marque-lien" aria-label="Portemine, accueil"><picture><source media="(forced-colors: active) and (prefers-color-scheme: dark)" srcset="/logo/logo-horizontal-fonce.svg"><img src="/logo/logo-horizontal-clair.svg" alt="Portemine" width="132" height="24"></picture></a>
+    <nav aria-label="Retour"><ul><li><a href="/">Retour au site</a></li></ul></nav>
     <a class="bouton principal petit" href="https://calendar.app.google/WHWJzX2LEHFPZG3t5">Réserver un appel</a>
   </div>
 </header>
-
-<main class="texte-legal">
+<main id="contenu" class="texte-legal">
   <h1>Mentions légales</h1>
-
   <section>
     <h2 class="h-legal">Éditeur</h2>
     <p>Le site portemine.fr est édité par Romain Schrijvers, à titre personnel, en attendant l’immatriculation de la société Schrijvers, en cours de création.<br>
@@ -31,29 +32,28 @@
     Contact&nbsp;: <a href="mailto:romain@portemine.fr">romain@portemine.fr</a><br>
     Directeur de la publication&nbsp;: Romain Schrijvers.</p>
   </section>
-
   <section>
     <h2 class="h-legal">Hébergeur</h2>
     <p>GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
   </section>
-
   <section>
     <h2 class="h-legal">Données personnelles et cookies</h2>
     <p>Ce site ne dépose aucun cookie et ne mesure pas l’audience. L’hébergeur peut journaliser les adresses IP des visiteurs pour la sécurité de son service. Les informations que vous envoyez par mail ou en réservant un appel servent uniquement à vous répondre et à préparer l’appel. Elles ne sont ni cédées ni revendues. Vous pouvez demander leur consultation ou leur suppression à <a href="mailto:romain@portemine.fr">romain@portemine.fr</a>.</p>
   </section>
-
   <section>
     <h2 class="h-legal">Propriété intellectuelle</h2>
     <p>Les textes, le nom Portemine, le logo et les visuels de ce site appartiennent à leur éditeur. Les logos des sociétés citées sous «&nbsp;Nous avons déjà travaillé avec&nbsp;» appartiennent à leurs titulaires. Ils indiquent le parcours de Romain Schrijvers, en mission, en stage ou avec la Junior-Entreprise de l’INSA Lyon, et ne valent ni partenariat ni référence client de Portemine. Une société qui souhaite le retrait de son logo peut l’obtenir sur simple demande.</p>
     <p>Les exemples montrent les résultats de l’outil sur un dossier de consultation public et une entreprise fictive.</p>
-    <p>Police&nbsp;: Schibsted Grotesk, sous licence SIL Open Font License&nbsp;1.1 (<a href="polices/OFL.txt">texte de la licence</a>).</p>
+    <p>Police&nbsp;: Schibsted Grotesk, sous licence SIL Open Font License&nbsp;1.1 (<a href="/polices/OFL.txt">texte de la licence</a>).</p>
   </section>
 </main>
-
-<footer class="pied">
-  <div class="pied-dedans">
-    <img src="logo/logo-horizontal-clair.svg" alt="Portemine" width="110" height="20">
-        <ul><li><a href="index.html">Accueil</a></li></ul>
+<footer class="pied" data-theme="marque">
+  <div class="page pied-dedans">
+    <picture><source media="(forced-colors: active) and (prefers-color-scheme: dark)" srcset="/logo/logo-horizontal-fonce.svg"><img src="/logo/logo-horizontal-clair.svg" alt="Portemine" width="110" height="20"></picture>
+    <ul>
+      <li><a href="mailto:romain@portemine.fr">romain@portemine.fr</a></li>
+      <li><a href="/">Accueil</a></li>
+    </ul>
   </div>
 </footer>
 </body>
